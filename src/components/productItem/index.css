@@ -32,7 +32,8 @@
 }
 
 .btn-primary:hover {
-  background-color: rgba(154, 201, 155, 1);
+  background-color: rgba(145, 193, 147, 1);
   border-color: #9AC99B;
-  color: black;
+  color: darkslategray;
+  font-weight: 600;
 }
