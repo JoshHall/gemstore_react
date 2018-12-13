@@ -37,3 +37,10 @@
   color: darkslategray;
   font-weight: 600;
 }
+
+.btn-primary:active, .btn-primary:focus {
+  background-color: rgba(145, 193, 147, 1);
+  border-color: #9AC99B;
+  color: darkslategray;
+  font-weight: 600;
+}

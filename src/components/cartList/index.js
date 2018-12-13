@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './index.css';
-import ProductItem from '../productItem';
 
-class ProductList extends Component {
+class CartList extends Component {
   render() {
     return (
-      <div className="ProductList">
+      <div className="CartList">
         <div className="row">
           { this.props.products &&
             this.props.products.map(product =>
@@ -18,4 +17,4 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+export default CartList;
