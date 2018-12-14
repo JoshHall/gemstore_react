@@ -4,15 +4,14 @@ import './index.css';
 class CartItem extends Component {
   render() {
     return (
-      <div className="CartItem">
-        <div className="row">
-          { this.props.products &&
-            this.props.products.map(product =>
-              <ProductItem info={product} key={product.id} addItem={this.props.addItem}/>
-            )
-          }
-        </div>
-      </div>
+      <tr>
+        <td>1</td>
+        <td>{this.props.item.name}</td>
+        <td>${this.props.item.price}</td>
+        <td>
+          <button className="btn btn-danger" onClick={() => this.props.removeItem(this.props.item.id)}>Remove</button>
+        </td>
+      </tr>
     );
   }
 }

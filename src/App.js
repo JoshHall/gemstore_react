@@ -46,7 +46,40 @@ class App extends Component {
     this.setState({
       cart: cart
     });
-    console.log(this.state.cart);
+    this.calcTotal();
+  }
+
+  removeItem= id => {
+    // set local varible to the current cart
+    let items = this.state.cart;
+
+    // loop through current cart and splice when we find the correct id
+    for (let index in items) {
+      if (items[index].id === id) {
+        items.splice(index,1);
+        break;
+      }
+    }
+
+    this.setState({
+      cart: items
+    });
+
+    this.calcTotal();
+  }
+
+  calcTotal = () => {
+    let total= 0;
+
+    for (let index in this.state.cart) {
+      total += this.state.cart[index].price;
+    }
+
+    total = total.toFixed(2);
+
+    this.setState({
+      total: total
+    });
   }
 
 
@@ -56,7 +89,7 @@ class App extends Component {
       <Navbar />
         <Switch>
           <Route exact path='/' render={() => <Home products={this.state.products} addItem={this.addItem}/>} />
-          <Route exact path='/checkout' render={() => <Checkout />} />
+          <Route exact path='/checkout' render={() => <Checkout cart={this.state.cart} removeItem={this.removeItem} total={this.state.total} />} />
         </Switch>
       </div>
     );

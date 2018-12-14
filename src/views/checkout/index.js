@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './index.css';
+import CartList from '../../components/cartList';
 
 class Checkout extends Component {
   render() {
     return (
       <div className="Checkout">
-        <h1>Checkout Page</h1>
+        <CartList cart={this.props.cart} removeItem={this.props.removeItem} total={this.props.total}/>
       </div>
     );
   }
